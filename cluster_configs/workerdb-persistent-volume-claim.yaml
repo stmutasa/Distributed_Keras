@@ -1,0 +1,15 @@
+# The first 4 lines look very familiar
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: workerdb-persistent-volume-claim
+
+# The spec
+spec:
+  # Allow many pods to access this
+  accessModes:
+#    - ReadWriteMany
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 2Gi
